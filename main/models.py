@@ -16,6 +16,7 @@ class Product(models.Model):
     thumbnail = models.URLField(blank=True, null=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     is_featured = models.BooleanField(default=False)
+    quantity = models.PositiveIntegerField(default=5)
     
     def __str__(self):
         return self.title
