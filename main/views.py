@@ -3,7 +3,7 @@ from django.shortcuts import render
 def show_main(request):
     context = {
         'npm' : '2406408395',
-        'name' : 'Haru Urara',
+        'name' : 'Ahmad Zein Rasyid Siregar',
         'class' : 'PBP E'
     }
 
