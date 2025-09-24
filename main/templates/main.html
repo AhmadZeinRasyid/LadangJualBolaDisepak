@@ -6,14 +6,28 @@
 <h3>NPM:</h3>
     <p>{{ npm }}</p>
 
-<a href="{% url 'main:add_product.html' %}">
+<a href="{% url 'main:add_product' %}">
     <button>Add Product</button>
 </a>
 
-{% for products in products_list %}
+<hr>
+
+{% if not products_list %}
+<p>Kosong melompong</p>
+{% else %}
+
+{% for product in products_list %}
 <div>
-    <a href="{% url 'main:product_details' %}">
-        <button>See Details</button>
-    </a>
+    <img src={{product.thumbnail}} alt="thumbnail" width="150" height="100">
+    <br />
+    <p><b>{{ product.get_name }}</b>
+        {{ product.price }} Dollerinos $$$
+    </p>
+    <p>{{ product.description|truncatewords:25 }}...</p>
+    <p><a href="{% url 'main:product_details' product.id %}"><button>Detail</button></a></p]>
 </div>
-{% endblock content %}
+
+<hr>
+{% endfor %}
+{% endif %}
+{% endblock %}
