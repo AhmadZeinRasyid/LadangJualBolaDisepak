@@ -46,3 +46,17 @@ no komen, gacor weh
 - form disini sebelumnya kita buat elemen yang dapat muncul/diubah ketika inisialisasi pada models.py, mungkin ingin menambahkan ketentuan tertentu, tapi disini saya tidak, kemudian menyambungkan dengan .html yang sesuai, ProductForm terpass sebagai context dan kita gunakan django {{ }} syntax untuk mengambil forms.as_table. kita gunakan <tr> dan <td> agar anchor element setelahnya ter-render dengan sesuai.
 - serupa dengan tutorial 3, kita pass object model yg sesuai sebagai context, dan merender pada html menggunakan {{ }} django syntax
 
+## Tugas 4
+1. django's AuthenticationForm adalah form bawaan yang memiliki field name dan password. sederhananya, form ini memastikan apakah user dengan nama ada dan memiliki password yang sesuai. banyak fungsionalitas yang sudah diimplementasi sehingga tidak perlu kita coding kembali, namun, form ini dependen dengan django user model, form ini juga kaku dengan hanya memiliki dua field, dimana kita harus membuat subclass jika ingin menambahkan field lainnya
+
+2. authentication bisa dibilang proses untuk memastikan pengguna sesuai dengan apa yang diucapkan, sementara authorization adalah proses pemberian izin/tingkat kuasa sesuai dengan identitas pengguna. django menggunakan AuthenticationForm sebagai proses authentikasi mereka, sementara untuk authorization, dengan scope Tugas 3, django menggunakan decorator @login_required dan method login(). 
+
+3. cookies dan session membantu mempertahankan status pengguna di beberapa permintaan. implementasi django juga memiliki _security measures_ yang menjaga dari kelemahan umum web. meskipun begitu, implementasi raw cookies dan session, tanpa langkah2 yang diambil untuk memastikan keamanan data, rentan terhadap serangan csrf dan xss.
+
+4. django menangani ini di sisi authentication dan authorization. django cookies menggunakan csrf token yang harus termasuk dalam semua jenis form. django session data juga ter-hash dengan secret key pada settings.py.
+
+5. 
+- mengubah beberapa functions agar menerapkan sistem login-logout, menambahkan decorator @login_required() untuk show_main() dan beberapa fungsi yg lain, 
+- nambah aja setelah python manage.py runserver, langkah terlucu dan terseru jujur
+- menghubungkan dengan menambahkan field User pada models.py/Product, field ini terupdate bukan di form, melainkan di alur logis views.py request.user, udah si?
+- Jujur bagian sini banyak bet rasanya mengkopi, kita simpan last_time login pada views.py/login, response menyimpan http response yang lalu kita set cookie dengan key 'last_login' dengan value datetime.datetime.now(). last_login ini di pass sebagai context pada show_main. untuk mendisplay nama user, kita bisa ubah context key 'nama' dengan request.user.username

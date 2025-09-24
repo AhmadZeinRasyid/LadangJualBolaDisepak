@@ -3,8 +3,6 @@
 <h1>LadangJualBeliBolaDisepak</h1>
 <h3>Nama:</h3>
     <p>{{ name }}</p>
-<h3>NPM:</h3>
-    <p>{{ npm }}</p>
 
 <a href="{% url 'main:add_product' %}">
     <button>Add Product</button>
@@ -26,8 +24,19 @@
     <p>{{ product.description|truncatewords:25 }}...</p>
     <p><a href="{% url 'main:product_details' product.id %}"><button>Detail</button></a></p]>
 </div>
-
 <hr>
 {% endfor %}
 {% endif %}
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+<hr>
+<a href="?filter=all">
+    <button type="button">All Products</button>
+</a>
+<a href="?filter=my">
+    <button type="button">My Products</button>
+</a> 
+<a href="{% url 'main:logout' %}">
+  <button>Logout</button>
+</a>
+
 {% endblock %}
