@@ -10,9 +10,19 @@ ahmad-zein41-ladangjualbelibola.pbp.cs.ui.ac.id
 - konfigurasi urls pada ../main/urls.py dan ../ladang_jual_bola/urls.py untuk routing dengan aplikasi 'main'
 - `git push pws master`
 
+------------------  if url exist  ---------------- url '', show_main -----------------------------------------
+|  HTTPS request | -------------> | main/urls.py | ------------------| show_main,                            |
+------------------  on urls.py    ----------------                   | render(request, 'main.html', context),|
+        |           ladang_jual_bola                                 -----------------------------------------
+        |
+        |  if not      ------------
+        -------------> | 404 page |
+                       ------------
 
 settings.py adalah settings utama untuk projek Django. file ini menyimpan detail database connection, list installed app, konfigurasi middleware, dan set path untuk berbagai files. 
 
 membuat perubahan pada ../models.py dan meng-commit tidak akan berubah, justru, kita harus me-run `python manage.py makemigrations` dan `python manage.py migrate` agar modelnya dapat secara benar ter-update
 
 kita menggunakan Django karna menggunakan python yg sudah dipelajari di matkul sebelumnya
+
+no komen, gacor weh
