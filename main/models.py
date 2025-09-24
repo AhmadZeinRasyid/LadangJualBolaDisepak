@@ -20,4 +20,3 @@ class Product(models.Model):
     
     def get_name(self):
         return self.name
-    
