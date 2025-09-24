@@ -46,3 +46,8 @@ no komen, gacor weh
 - form disini sebelumnya kita buat elemen yang dapat muncul/diubah ketika inisialisasi pada models.py, mungkin ingin menambahkan ketentuan tertentu, tapi disini saya tidak, kemudian menyambungkan dengan .html yang sesuai, ProductForm terpass sebagai context dan kita gunakan django {{ }} syntax untuk mengambil forms.as_table. kita gunakan <tr> dan <td> agar anchor element setelahnya ter-render dengan sesuai.
 - serupa dengan tutorial 3, kita pass object model yg sesuai sebagai context, dan merender pada html menggunakan {{ }} django syntax
 
+<img width="1600" height="1000" alt="image" src="https://github.com/user-attachments/assets/9a55c404-8e4a-437c-a948-30320775443c" />
+<img width="1600" height="1000" alt="Screenshot 2025-09-24 223209" src="https://github.com/user-attachments/assets/010de21a-d408-453b-8a94-93a0bbe8cbf0" />
+
+
+
